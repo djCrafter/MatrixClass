@@ -10,17 +10,7 @@ namespace MatrixClass
         private int[,] arr;
         private int col;
         private int row;
-
-        public int Col
-        {
-            get => col;
-        }
-
-        public int Row
-        {
-            get => row;
-        } 
-
+    
         public Matrix(int col, int row)
         {
             this.col = col;
@@ -76,11 +66,6 @@ namespace MatrixClass
             Thread.Sleep(20);
         }
 
-        private int[,] GetArr()
-        {
-            return arr;
-        }
-
         public static bool SizeEquals(Matrix a, Matrix b)
         {
             return a.col == b.col && a.row == b.row;
@@ -98,7 +83,7 @@ namespace MatrixClass
             }
         }
 
-        public static Matrix BinariOp(Matrix a, Matrix b, char op)
+        private static Matrix BinariOp(Matrix a, Matrix b, char op)
         {
             if (SizeEquals(a, b))
             {
@@ -131,7 +116,7 @@ namespace MatrixClass
             else throw new Exception();
         }
 
-        private static int MatrixSum(Matrix a)
+        public static int MatrixSum(Matrix a)
         {
             int sum = 0;
 
